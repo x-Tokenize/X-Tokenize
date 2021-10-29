@@ -1,0 +1,29 @@
+{
+    "name": "x-tokenize",
+    "version": "0.1.0",
+    "description": "A tool to issue currencies on the XRPL and execute airdrops.",
+    "main": "x-tokenize.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "bin":{
+      "x-tokenize":"x-tokenize.js"
+    },
+    "keywords": [
+      "xrpl",
+      "issued-currencies",
+      "cli"
+    ],
+    "author": "mikecheckyaself",
+    "license": "ISC",
+    "dependencies": {
+      "chalk": "^4.1.2",
+      "clear": "^0.1.0",
+      "clui": "^0.3.6",
+      "conf": "^10.0.3",
+      "figlet": "^1.5.2",
+      "inquirer": "^8.2.0",
+      "xrpl": "^2.0.0"
+    }
+  }
+  
