@@ -1,17 +1,20 @@
-#! /usr/bin/env node
-const {initialize} = require('./lib/tokenize/initialize');
-const { main } = require('./lib/tokenize/main');
+#!/usr/bin/env node
 
+import {menuHandler} from "./src/menu/menuHandler.js"
+import {menu} from './src/menu/menu.js'
+import { getStartUpMenu } from "./src/menu/getStartupMenu.js"
+import {acknowledgeTaC} from "./src/config/misc/acknowledgeTaC.js"
 
-const tokenize = async() =>{
-    try{
-        const {network,client} = await initialize();
-        await main(network,client)
-    }
-    catch(err)
+const main = async ()=>{
+    try
     {
-        tokenize();
+        await acknowledgeTaC()
+        let startupMenu = await getStartUpMenu()
+        await menuHandler(menu,startupMenu)
+    }
+    catch(e){
+        console.log(e)
     }
 }
 
-tokenize();
+main()

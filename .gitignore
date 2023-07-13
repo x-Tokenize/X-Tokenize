@@ -1,3 +1,9 @@
-node_modules/
-xrpl-implementation/NFTs
+# Directories
+/docs
+/logs
+/node_modules
+/nft-metadata/*
+
+# Files
 package-lock.json
+.DS_Store
