@@ -1,0 +1,12 @@
+When creating a new NFT project you will find a directory structure like this:
+
+```
+├── PROJECT-NAME
+│   ├── assets
+│   ├── metadata
+│   └── 
+```
+
+Place your json metadata files in the metadata directory and all of your assets (images, videos, etc) in the assets directory. 
+The metadata files should be numbered and all of the assets should be numbered to match the metadata files.
+
