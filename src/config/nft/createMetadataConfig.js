@@ -17,6 +17,7 @@ export const createMetadataConfig = async(name)=>{
     try
     {  
         let projectName = configHandler.getCurrentProjectName()   
+        makeDirectory(`${process.cwd()}/nft-metadata/`)
         makeDirectory(`${process.cwd()}/nft-metadata/${projectName}`)
         makeDirectory(`${process.cwd()}/nft-metadata/${projectName}/${name}`)
         makeDirectory(`${process.cwd()}/nft-metadata/${projectName}/${name}/metadata`)
@@ -220,7 +221,7 @@ console.log(`
                                 projectName:projectName,
                                 deploymentType:deploymentType,
                                 apiKeys:apiKeys,
-                                directory:`nft-metadata/${projectName}/${name}`,
+                                directory:`${process.cwd()}/nft-metadata/${projectName}/${name}`,
                                 status:'pending',
                                 additionalDeployments:additionalDeployments,
                                 numDeploymentItems:deploymentItems.length,
