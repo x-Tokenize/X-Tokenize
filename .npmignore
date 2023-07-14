@@ -1,6 +1,5 @@
 /docs
 /logs
-/nft-metadata/*
 .git
 .DS_Store
 .vscode
