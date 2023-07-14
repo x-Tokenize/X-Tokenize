@@ -49,6 +49,7 @@ export const createNFTConfig = async(configName)=>{
         let confirm = await askYesNo('Is this correct?',true)
         if(confirm)
         {
+            makeDirectory(`${process.cwd()}/nft-metadata/`)
             makeDirectory(`${process.cwd()}/nft-metadata/${NFTConfig.name}`)
             return {result:'success',message:'NFT configuration created',config:NFTConfig}
         }

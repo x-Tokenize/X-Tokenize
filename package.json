@@ -1,6 +1,6 @@
 {
   "name": "x-tokenize",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "A command line interface for managing XRPL issued currencies and NFTs.",
   "main": "x-tokenize.js",
   "type": "module",
