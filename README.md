@@ -48,7 +48,7 @@ Feel free to explore the documentation to maximize your learning experience and 
     * Metadata: Deploy assets and metadata to IPFS w/ piñata or to AWS S3 buckets
     * Minting: Bulk NFT creation
     * Distribution: Multiple forms of distributing NFTs
-3)  **XRPL DEX Module**
+3)  **XRPL DEX**
     * Trading Pair orderbook viewing
     * Offer Management: Place and cancel offers
 4)  **NFT Marketplace**
