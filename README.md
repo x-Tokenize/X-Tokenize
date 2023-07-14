@@ -4,7 +4,7 @@ X-Tokenize is a powerful command line interface (CLI) designed to enhance your u
 
 ## Installation
 ### Pre-requisites
-1) [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed (verified with node v18.16.1 and 7.24.2)
+1) [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed (verified with node v18.16.1 and 9.8.0)
 
 
 
