@@ -2,7 +2,6 @@
 /docs
 /logs
 /node_modules
-/nft-metadata/*
 
 # Files
 package-lock.json
