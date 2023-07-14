@@ -9,11 +9,13 @@ X-Tokenize is a powerful command line interface (CLI) designed to enhance your u
 
 
 ```bash
-# To install X-Tokenize globally on your machine, run:
-npm install -g x-tokenize
+# At this point in time we recommend installing X-Tokenize locally in a new directory
 
 # To install X-Tokenize locally in your project directory, run:
 npm install x-tokenize
+
+# To install X-Tokenize globally on your machine, run:
+npm install -g x-tokenize
 ```
 
 
@@ -22,11 +24,11 @@ npm install x-tokenize
 To run X-Tokenize, open your favorite terminal and execute the following command:
 
 ```bash
-# If installed globally, use this command:
-x-tokenize
-
 # If installed locally, use this command:
 node x-tokenize.js
+
+# If installed globally, use this command:
+x-tokenize
 ```
 
 ## Documentation
