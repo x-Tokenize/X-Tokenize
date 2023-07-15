@@ -4,31 +4,29 @@ X-Tokenize is a powerful command line interface (CLI) designed to enhance your u
 
 ## Installation
 ### Pre-requisites
-1) [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed (verified with node v18.16.1 and 9.8.0)
+1) [LTS Node.js and npm](https://nodejs.org/en/) installed (verified with node v18.16.1 and 9.8.0)
+2) [Git](https://git-scm.com/) installed
 
-
-
+## Local Installation
+1) Create a new directory to store the X-Tokenize repository
+2) Open a terminal and navigate to the new directory
+3) Clone the repository:
+```bash 
+git clone https://github.com/x-Tokenize/X-Tokenize.git
+```
+4) Navigate to the root directory of the cloned repository 
 ```bash
-# At this point in time we recommend installing X-Tokenize locally in a new directory
-
-# To install X-Tokenize locally in your project directory, run:
-npm install x-tokenize
-
-# To install X-Tokenize globally on your machine, run:
-npm install -g x-tokenize
+cd X-Tokenize
+```
+5) Install the dependencies by running the following command:
+```bash
+npm install
 ```
 
-
 ## Usage
-
-To run X-Tokenize, open your favorite terminal and execute the following command:
-
+In the root directory of the cloned repository, run the following command:
 ```bash
-# If installed locally, use this command:
 node x-tokenize.js
-
-# If installed globally, use this command:
-x-tokenize
 ```
 
 ## Documentation
@@ -79,8 +77,8 @@ Stay tuned for detailed contribution guidelines, which we are actively working o
 
 ## License
 
-X-Tokenize is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more information.
+X-Tokenize is licensed under the Apache License 2.0. See the [LICENSE](./LICENSE) file for more information.
 
 ## Support
 
-For any questions or support, please contact our team at support@x-tokenize.com.
+For any questions or support join the [X-Tokenize Discord](https://discord.com/invite/QmZWZAVBG5)
