@@ -1,4 +1,5 @@
 import xrpl from 'xrpl'
+import BigNumber from 'bignumber.js';
 
  /**
  * @function getNFTokenIdFromTx
@@ -11,12 +12,23 @@ import xrpl from 'xrpl'
  * @returns {string} - The NFT ID as a hexadecimal string.
  * @throws {Error} - Throws an error if the token sequence is not found or if the token ID length is invalid.
  */
-export const getNFTokenIdFromTx = (transaction) =>{
-    let {tx,meta} = transaction
-    let {Account,NFTokenTaxon,TransferFee,Flags,Issuer} = tx
+
+  export const getNFTokenIdFromTx = (tx) =>{
+    let {Account,NFTokenTaxon,TransferFee,Flags,meta,Issuer} = tx
+    //console.log(tx)
+
+    if (typeof meta !== 'object' || !Array.isArray(meta.AffectedNodes)) {
+        throw new Error('Invalid meta data.');
+    }
+
+    if (Object.prototype.hasOwnProperty.call(meta, 'nftoken_id')) {
+        return meta.nftoken_id;
+    }
+
     let AccountToCheckSequence='';
     let TokenSequence;
     let NextTokenSequence;
+    let FirstNFTokenSequence;
 
     meta.AffectedNodes.forEach((node) => {
         if (
@@ -31,6 +43,7 @@ export const getNFTokenIdFromTx = (transaction) =>{
             
             TokenSequence = PreviousFields.MintedNFTokens;
             NextTokenSequence = FinalFields.MintedNFTokens;
+            FirstNFTokenSequence = PreviousFields?.FirstNFTokenSequence || FinalFields?.FirstNFTokenSequence;
             }
         }
       });
@@ -38,11 +51,20 @@ export const getNFTokenIdFromTx = (transaction) =>{
       if (typeof TokenSequence === "undefined" && NextTokenSequence === 1) {
         TokenSequence = 0;
       }
-      else if (typeof TokenSequence === "undefined") {
-        throw new Error("Unable to find Token Sequnce");
-      }
+
+      TokenSequence += FirstNFTokenSequence ?? 0
+
         const NFTIssuer =xrpl.decodeAccountID(AccountToCheckSequence)
-        const CipheredTaxon = NFTokenTaxon ^ (384160001 * TokenSequence + 2459);
+
+        const UnscrambleTaxon = new BigNumber(384160001)
+        .multipliedBy(TokenSequence)
+        .modulo(4294967296)
+        .plus(2459)
+        .modulo(4294967296)
+        .toNumber();
+
+        // Calculate ciphered taxon
+        const CipheredTaxon = (NFTokenTaxon ^ UnscrambleTaxon) >>> 0;
 
         const TokenID = Buffer.concat([
             Buffer.from([(Flags >> 8) & 0xff, Flags & 0xff]),
@@ -68,4 +90,4 @@ export const getNFTokenIdFromTx = (transaction) =>{
         }
 
         return TokenID.toString('hex').toUpperCase();
-    }
+}

@@ -1,7 +1,7 @@
 import { configHandler } from "../../config/configHandler.js"
 import { printResponse, successMessage,  askYesNo, wait, pressAnyKey,  infoMessage, warningMessage,  importantMessage} from "../../utils/index.js"
 import { getNFTokenDistributionStatus } from './getNFTokenDistributionStatus.js'
-import { handleAcceptedOffer,handleIncomingPayment,handleCreatedOffer,handleCancelledOffer } from "./NFTokenDistributionhandlers.js"
+import { handleAcceptedOffer,handleIncomingPayment,handleCreatedOffer,handleCancelledOffer } from "./NFTokenDistributionHandlers.js"
 import { getSortedTransactionsToHandleDistribution } from "./getNFTokenDistributionRelatedTxs.js"
 
 

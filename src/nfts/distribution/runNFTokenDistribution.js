@@ -3,7 +3,7 @@ import { configHandler } from "../../config/configHandler.js"
 import { printResponse, successMessage, printBanner, askYesNo, wait, pressAnyKey, shuffleArray, infoMessage, warningMessage,  importantMessage, fancyMessage} from "../../utils/index.js"
 import {getWalletFromEncryptedSeed,createNFTokenOffer,getLatestLedger, getAccountTransactions } from "../../xrpl/index.js"
 import { isNFTokenDistributionReady } from "./isNFTokenDistributionReady.js"
-import { handleCreateOffer } from './NFTokenDistributionhandlers.js'
+import { handleCreateOffer } from './NFTokenDistributionHandlers.js'
 import { processDistributionTransactions } from './processNFTDistributionTransactions.js'
 import { initializeNFTokenDistribution } from './initializeNFTokenDistribution.js'
 
